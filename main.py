@@ -62,13 +62,16 @@ def runSystem():
                                   } Welcome to task manager ---> """)
                 print("Tell us what do you want to do!!")
                 print("1. Add task?")
-                print("2. View task?")
+                print("2. View all task?")
                 print("3. update any task?")
                 print("4. Delete any task?")
                 print("5. Sort your task by priority?")
                 print("6. Sort your task by due date?")
                 print("7. Delete your profile?")
-                print("8. Exit")
+                print("8. View pending task")
+                print("9. View completed task")
+                print("10. Completed a task?")
+                print("11. Exit")
 
                 cmd = int(input("Please select your option: "))
                 if cmd == 1:  # add task
@@ -90,6 +93,14 @@ def runSystem():
                 elif cmd == 7:
                     task_manager.delete_profile()
                     break
+                elif cmd == 8:
+                    task_manager.view_user_task("pending")
+                elif cmd == 9:
+                    task_manager.view_user_task("completed")
+                elif cmd == 10:
+                    task_id = int(input("Please enter a valid task id: "))
+                    task_manager.update_user_task(
+                        task_id, status="completed")
                 else:
                     break
 

@@ -12,13 +12,20 @@ class User:
         self.taskList.append({id: task})
         print("New task added!!")
 
-    def view_task(self):
+    def view_task(self, status=None):
         print("\t<---- Your Tasks ---->")
         print(f"id\ttask name\tdue date\tpriority\tstatus")
         for task_dict in self.taskList:
             for k, v in task_dict.items():
-                print(f"""{k}\t{v.task_name}\t{
-                    v.due_date}\t{v.priority}\t{v.status}""")
+                if status == "pending" and v.status == "pending":
+                    print(f"""{k}\t{v.task_name}\t{
+                        v.due_date}\t{v.priority}\t{v.status}""")
+                elif status == "completed" and v.status == "completed":
+                    print(f"""{k}\t{v.task_name}\t{
+                        v.due_date}\t{v.priority}\t{v.status}""")
+                else:
+                    print(f"""{k}\t{v.task_name}\t{
+                        v.due_date}\t{v.priority}\t{v.status}""")
 
     def update_task(self, task_id, **kwargs):
         for task_dict in self.taskList:

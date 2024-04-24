@@ -11,8 +11,8 @@ class Taskmanager:
     def add_user_task(self, task):  # accept task object
         self.user.add_task(task)
 
-    def view_user_task(self):
-        self.user.view_task()
+    def view_user_task(self, status=None):
+        self.user.view_task(status)
 
     def update_user_task(self, task_id, **kwargs):
         self.user.update_task(task_id, **kwargs)
