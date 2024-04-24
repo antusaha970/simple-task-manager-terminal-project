@@ -23,7 +23,7 @@ class User:
                 elif status == "completed" and v.status == "completed":
                     print(f"""{k}\t{v.task_name}\t{
                         v.due_date}\t{v.priority}\t{v.status}""")
-                else:
+                elif status == "all":
                     print(f"""{k}\t{v.task_name}\t{
                         v.due_date}\t{v.priority}\t{v.status}""")
 

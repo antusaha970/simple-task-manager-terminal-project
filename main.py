@@ -77,7 +77,7 @@ def runSystem():
                 if cmd == 1:  # add task
                     add_task(task_manager)
                 elif cmd == 2:
-                    task_manager.view_user_task()
+                    task_manager.view_user_task("all")
                 elif cmd == 3:
                     update_task(task_manager)
                 elif cmd == 4:
@@ -86,10 +86,10 @@ def runSystem():
                     task_manager.delete_user_task(task_id=task_id)
                 elif cmd == 5:
                     task_manager.sort_user_task_by_priority()
-                    task_manager.view_user_task()
+                    task_manager.view_user_task("all")
                 elif cmd == 6:
                     task_manager.sort_task_by_due_date()
-                    task_manager.view_user_task()
+                    task_manager.view_user_task("all")
                 elif cmd == 7:
                     task_manager.delete_profile()
                     break
